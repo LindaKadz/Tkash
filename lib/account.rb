@@ -5,4 +5,8 @@ def initialize
   @balance= 1000
 end
 
+def withdraw (withdraw)
+	return withdraw
+end
+
 end
