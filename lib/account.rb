@@ -10,4 +10,9 @@ def withdraw(amount)
 	return amount
 end
 
+def deposit (amount)
+	@balance = @balance + amount
+	return amount
+end 
+
 end

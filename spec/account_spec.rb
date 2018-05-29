@@ -11,7 +11,13 @@ describe Account do
   end 
   it 'reduces my balance' do
   	subject.withdraw(400)
-  	
   	expect(subject.balance).to eq 600
+  end
+  it 'returns amount deposited' do
+  	expect(subject.deposit(500)).to eq 500
+  end
+  it 'returns my new balance' do
+  	subject.deposit(500)
+  	expect(subject.balance).to eq 1500
   end
 end
