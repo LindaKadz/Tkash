@@ -6,13 +6,13 @@ def initialize
 end
 
 def withdraw(amount)
-	@balance = @balance - amount
-	return amount
+	@balance -= amount
+	amount
 end
 
 def deposit (amount)
-	@balance = @balance + amount
-	return amount
+	@balance += amount
+	amount
 end 
 
 end
