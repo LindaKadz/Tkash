@@ -7,7 +7,7 @@ end
 
 def withdraw(amount)
 	if (@balance < amount)
-   	'You do not have sufficient funds'
+   	{balance: @balance , time: '1538' , status: false}
 
   else
     @balance -= amount

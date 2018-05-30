@@ -14,9 +14,6 @@ describe Account do
   	subject.deposit(500)
   	expect(subject.balance).to eq 1500
   end
-  it 'returns insufficient funds' do
-    expect(subject.withdraw(2000)).to eq 'You do not have sufficient funds'
-  end
   it 'returns current balance' do
     subject.withdraw(2000)
     expect(subject.balance).to eq 1000
@@ -26,4 +23,9 @@ describe Account do
     expected_output= { transactioncode: 'WRXP45P', balance: new_balance , amount: 200 , time: '1447' , status: true }
     expect(subject.withdraw(200)).to eq expected_output
   end
+  it 'returns failure message for excess amount' do
+    new_balance = subject.balance
+    expected_output= {balance: new_balance , time: '1538' , status: false}
+  expect(subject.withdraw(3000)).to eq expected_output
+  end 
 end
