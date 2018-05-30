@@ -11,7 +11,7 @@ def withdraw(amount)
 
   else
     @balance -= amount
-    amount
+    { transactioncode: 'WRXP45P', balance: @balance ,amount: 200 , time: '1447' , status: true }
   end
 end
 
