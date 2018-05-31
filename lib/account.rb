@@ -27,6 +27,11 @@ end
 
 def agent_number_exist(agent_number)
    AGENT_NUMBERS.include?agent_number
-end 
+end
+
+def send_money(receiver, amount, pin)
+  @balance -= amount
+  receiver.balance += amount
+end
 
 end

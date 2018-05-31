@@ -35,4 +35,12 @@ describe Account do
   it 'returns fail message for wrong PIN' do
     expect(subject.withdraw(200, 98, 3241)).to eq 'Wrong PIN'
   end
+
+  it'sends money from one account to another' do
+    linda = Account.new
+    akim = Account.new
+    linda.send_money(akim, 400, 1234)
+    expect(linda.balance).to eq 600
+    expect(akim.balance).to eq 1400
+  end
 end
