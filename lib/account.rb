@@ -4,10 +4,12 @@ class Account
 
 def initialize
   @balance= 1000
+  @pin= 1234
 end
 
-def withdraw(amount, agent_number)
+def withdraw(amount, agent_number, pin)
  return 'Failed, wrong agent number' unless agent_number_exist(agent_number) 
+ return 'Wrong PIN' unless @pin == pin 
 
   if (@balance < amount)
    	{balance: @balance , time: '1538' , status: false}
@@ -25,6 +27,11 @@ end
 
 def agent_number_exist(agent_number)
    AGENT_NUMBERS.include?agent_number
+end
+
+def send_money(receiver, amount, pin)
+  @balance -= amount
+  receiver.balance += amount
 end
 
 end
